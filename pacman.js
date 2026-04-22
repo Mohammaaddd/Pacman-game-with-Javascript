@@ -78,7 +78,18 @@ class Pacman {
     return false;
   }
 
-  checkGhostCollision() {}
+  checkGhostCollision() {
+    for (let i = 0; i < ghosts.length; i++) {
+      let ghost = ghosts[i];
+      if (
+        this.getMapX() == ghost.getMapX() &&
+        this.getMapY() == ghost.getMapY()
+      ) {
+        return true;
+      }
+    }
+    return false;
+  }
 
   changeDirectionIfPossible() {
     if (this.direction == this.nextDirection) return;
